@@ -2,6 +2,10 @@
 
 A small TypeScript agent harness (tool calling, loop guards, context budget, structured output) with an eval harness that scores a non-deterministic model with confidence intervals.
 
+![Terminal replay: npm run mutants reports 18 guards removed and 18 caught, then npm test scrolls to 187 passing, then the mutants run again](docs/demo.gif)
+
+*A replay of real output from `npm test` (187 of 187 pass) and `npm run mutants` (18 guards removed one at a time, all 18 caught), captured 2026-10-24. [Full quality mp4](docs/demo.mp4).*
+
 ## What it is and why
 
 Running agents on small local models fails in quiet ways. A server answers 200 with half the prompt cut. A model drops a tool call. A big tool result is trimmed and the model invents the missing part. This repo is a clean room harness that turns each of those failures into code you can test, plus an eval runner that says how often a model really gets a task right, with an interval, and keeps broken trials out of the score.
