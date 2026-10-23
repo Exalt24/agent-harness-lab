@@ -1,3 +1,4 @@
+// LIFESPAN: permanent
 // Usage:
 //   node eval/run.ts --scripted [--trials 10] [--out file]
 //   node eval/run.ts --ollama <model> [--trials 10] [--configs a,b] [--budget-min 8] [--resume] [--out file]

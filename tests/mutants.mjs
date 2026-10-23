@@ -1,3 +1,4 @@
+// LIFESPAN: permanent
 // Mutation harness. Each mutant removes or breaks ONE guard in a temp copy of the project and the
 // suite must go red. A mutant the suite does not catch, or an anchor that no longer matches the
 // source exactly once, fails the whole run. The temp copies live in .mutants/ inside the project so

@@ -1,3 +1,4 @@
+// LIFESPAN: permanent
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { capToolResult, estimateTokens, fitMessages, readResult, ResultStore, STUB_MARKER, TRIM_NOTE_PREFIX } from "../src/context.ts";

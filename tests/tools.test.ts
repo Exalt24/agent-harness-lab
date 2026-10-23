@@ -1,3 +1,4 @@
+// LIFESPAN: permanent
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { ResultStore } from "../src/context.ts";

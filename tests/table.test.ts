@@ -1,3 +1,4 @@
+// LIFESPAN: permanent
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { LEGAL_TRANSITIONS } from "../src/loop.ts";

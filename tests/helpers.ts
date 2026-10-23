@@ -1,3 +1,4 @@
+// LIFESPAN: permanent
 import { z } from "zod";
 import { FakeClock } from "../src/clock.ts";
 import { estimatePromptTokens } from "../src/context.ts";
