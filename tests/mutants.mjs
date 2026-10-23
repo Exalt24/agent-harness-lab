@@ -47,7 +47,7 @@ function count(text, needle) {
 }
 
 function runSuite(cwd) {
-  const r = spawnSync(process.execPath, ["--test", "--test-timeout=4000", "tests/*.test.ts"], { cwd, encoding: "utf8", timeout: 120_000 });
+  const r = spawnSync(process.execPath, ["--test", "--test-reporter=spec", "--test-timeout=4000", "tests/*.test.ts"], { cwd, encoding: "utf8", timeout: 120_000 });
   const out = `${r.stdout ?? ""}${r.stderr ?? ""}`;
   const failed = Number(/ℹ fail (\d+)/.exec(out)?.[1] ?? NaN);
   return { green: r.status === 0 && failed === 0, status: r.status, signal: r.signal, failed, out };
