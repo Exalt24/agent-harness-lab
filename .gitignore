@@ -1,0 +1,7 @@
+node_modules
+dist
+.mutants
+# Eval reports are local output. The committed sample is the one dated report quoted in the README.
+eval/reports/*
+!eval/reports/.gitkeep
+!eval/reports/sample-*.json

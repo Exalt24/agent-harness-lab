@@ -1,0 +1,7226 @@
+{
+  "date": "2026-10-24",
+  "backend": "ollama",
+  "model": "qwen3.5:4b",
+  "trialsPerCell": 30,
+  "complete": true,
+  "environment": {
+    "node": "v24.18.0",
+    "platform": "win32",
+    "temperatureUnsetMeans": "no temperature sent, the model's own default applies",
+    "numCtx": 8192,
+    "think": false,
+    "ollamaVersion": "0.40.9",
+    "modelDetails": {
+      "parent_model": "model.gguf",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "4.2B",
+      "quantization_level": "Q4_K_M",
+      "runner": "llamacpp"
+    }
+  },
+  "pooled": [
+    {
+      "case": "all",
+      "config": "temp-unset-tools5",
+      "pass": 97,
+      "fail": 23,
+      "scored": 120,
+      "error": 0,
+      "rate": 0.8083333333333333,
+      "ci": {
+        "low": 0.7287868300416364,
+        "high": 0.8687506694738739
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "all",
+      "config": "temp0-tools5",
+      "pass": 90,
+      "fail": 30,
+      "scored": 120,
+      "error": 0,
+      "rate": 0.75,
+      "ci": {
+        "low": 0.6655869783172575,
+        "high": 0.8189028861547777
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "all",
+      "config": "temp-unset-tools24",
+      "pass": 88,
+      "fail": 32,
+      "scored": 120,
+      "error": 0,
+      "rate": 0.7333333333333333,
+      "ci": {
+        "low": 0.6478739437150142,
+        "high": 0.8043165964588853
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "all",
+      "config": "temp0-tools24",
+      "pass": 90,
+      "fail": 30,
+      "scored": 120,
+      "error": 0,
+      "rate": 0.75,
+      "ci": {
+        "low": 0.6655869783172575,
+        "high": 0.8189028861547777
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    }
+  ],
+  "pooledToolChoice": [
+    {
+      "case": "tool-choice",
+      "config": "temp-unset-tools5",
+      "pass": 83,
+      "fail": 7,
+      "scored": 90,
+      "error": 0,
+      "rate": 0.9222222222222223,
+      "ci": {
+        "low": 0.8480596940416417,
+        "high": 0.9618156704022723
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "tool-choice",
+      "config": "temp0-tools5",
+      "pass": 90,
+      "fail": 0,
+      "scored": 90,
+      "error": 0,
+      "rate": 1,
+      "ci": {
+        "low": 0.9590629315783191,
+        "high": 0.9999999999999999
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "tool-choice",
+      "config": "temp-unset-tools24",
+      "pass": 78,
+      "fail": 12,
+      "scored": 90,
+      "error": 0,
+      "rate": 0.8666666666666667,
+      "ci": {
+        "low": 0.7812588689264784,
+        "high": 0.9220539475642889
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "tool-choice",
+      "config": "temp0-tools24",
+      "pass": 90,
+      "fail": 0,
+      "scored": 90,
+      "error": 0,
+      "rate": 1,
+      "ci": {
+        "low": 0.9590629315783191,
+        "high": 0.9999999999999999
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    }
+  ],
+  "cells": [
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "pass": 30,
+      "fail": 0,
+      "error": 0,
+      "scored": 30,
+      "rate": 1,
+      "ci": {
+        "low": 0.8864829086095221,
+        "high": 1
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "pass": 30,
+      "fail": 0,
+      "error": 0,
+      "scored": 30,
+      "rate": 1,
+      "ci": {
+        "low": 0.8864829086095221,
+        "high": 1
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "pass": 23,
+      "fail": 7,
+      "error": 0,
+      "scored": 30,
+      "rate": 0.7666666666666667,
+      "ci": {
+        "low": 0.5907132766967574,
+        "high": 0.8820776078949878
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "pass": 14,
+      "fail": 16,
+      "error": 0,
+      "scored": 30,
+      "rate": 0.4666666666666667,
+      "ci": {
+        "low": 0.30232127224128236,
+        "high": 0.6385798671847496
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "pass": 30,
+      "fail": 0,
+      "error": 0,
+      "scored": 30,
+      "rate": 1,
+      "ci": {
+        "low": 0.8864829086095221,
+        "high": 1
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "pass": 30,
+      "fail": 0,
+      "error": 0,
+      "scored": 30,
+      "rate": 1,
+      "ci": {
+        "low": 0.8864829086095221,
+        "high": 1
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "pass": 30,
+      "fail": 0,
+      "error": 0,
+      "scored": 30,
+      "rate": 1,
+      "ci": {
+        "low": 0.8864829086095221,
+        "high": 1
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "pass": 0,
+      "fail": 30,
+      "error": 0,
+      "scored": 30,
+      "rate": 0,
+      "ci": {
+        "low": 0,
+        "high": 0.113517091390478
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "pass": 30,
+      "fail": 0,
+      "error": 0,
+      "scored": 30,
+      "rate": 1,
+      "ci": {
+        "low": 0.8864829086095221,
+        "high": 1
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "pass": 27,
+      "fail": 3,
+      "error": 0,
+      "scored": 30,
+      "rate": 0.9,
+      "ci": {
+        "low": 0.7437855868473339,
+        "high": 0.9654007400402839
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "pass": 21,
+      "fail": 9,
+      "error": 0,
+      "scored": 30,
+      "rate": 0.7,
+      "ci": {
+        "low": 0.5212387898833981,
+        "high": 0.8333543735604105
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "pass": 10,
+      "fail": 20,
+      "error": 0,
+      "scored": 30,
+      "rate": 0.3333333333333333,
+      "ci": {
+        "low": 0.19230295526846194,
+        "high": 0.5122027418616973
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "pass": 30,
+      "fail": 0,
+      "error": 0,
+      "scored": 30,
+      "rate": 1,
+      "ci": {
+        "low": 0.8864829086095221,
+        "high": 1
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "pass": 30,
+      "fail": 0,
+      "error": 0,
+      "scored": 30,
+      "rate": 1,
+      "ci": {
+        "low": 0.8864829086095221,
+        "high": 1
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "pass": 30,
+      "fail": 0,
+      "error": 0,
+      "scored": 30,
+      "rate": 1,
+      "ci": {
+        "low": 0.8864829086095221,
+        "high": 1
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "pass": 0,
+      "fail": 30,
+      "error": 0,
+      "scored": 30,
+      "rate": 0,
+      "ci": {
+        "low": 0,
+        "high": 0.113517091390478
+      },
+      "errorReasons": [],
+      "truncationWarnings": 0
+    }
+  ],
+  "trials": [
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 0,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 431,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 1,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 428,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of $17 \\times 23 + 4$ is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 2,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 390,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 3,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 324,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 411,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of $17 \\times 23 + 4$ is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 5,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 406,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 6,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 427,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 multiplied by 23, then added by 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 7,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 396,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 8,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 430,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 multiplied by 23, then added to 4, is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 9,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 401,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of $17 \\times 23 + 4$ is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 10,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 397,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 multiplied by 23 plus 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 11,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 398,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 × 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 12,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 423,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of $17 \\times 23 + 4$ is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 13,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 400,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 × 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 14,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 404,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 15,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 418,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 16,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 402,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 17,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 405,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 18,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 398,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 19,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 405,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 20,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 325,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 21,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 399,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 22,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 391,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 23,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 402,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 24,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 388,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 25,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 389,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 398,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 27,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 346,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 28,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 387,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools5",
+      "trial": 29,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 409,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of $17 \\times 23 + 4$ is 395."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 0,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 372,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 1,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 343,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 2,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 316,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 3,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 337,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 335,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 5,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 340,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 6,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 355,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 7,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 310,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 8,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 307,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 9,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 309,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 10,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 310,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 11,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 326,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 12,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 327,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 13,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 310,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 14,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 307,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 15,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 325,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 16,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 331,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 17,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 335,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 18,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 330,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 19,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 309,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 20,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 312,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 21,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 338,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 22,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 310,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 23,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 310,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 24,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 326,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 25,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 330,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 314,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 27,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 342,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 28,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 333,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools5",
+      "trial": 29,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 324,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 0,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 701,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 1,
+      "outcome": "fail",
+      "reason": "answer does not contain 840",
+      "steps": 3,
+      "ms": 681,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 1,260 requests per day (calculated as 120 requests multiplied by 7)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 2,
+      "outcome": "fail",
+      "reason": "did not call calculator",
+      "steps": 2,
+      "ms": 412,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. Multiplying that by 7 gives you **840**."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 3,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 629,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, which multiplied by 7 equals **840**."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 639,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, so that number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 5,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 590,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 840 requests (120 times 7)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 6,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 630,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, which is 840 when multiplied by 7."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 7,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 591,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows **840 requests** per day."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 8,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 668,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, so 120 times 7 is **840**."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 9,
+      "outcome": "fail",
+      "reason": "answer does not contain 840",
+      "steps": 3,
+      "ms": 649,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 1,260 requests over 7 days (120 requests per day × 7)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 10,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 651,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. Multiplying this by 7 gives: 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 11,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 644,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 840 requests in a week (120 requests per day × 7 days)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 12,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 629,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 840 requests per week (120 requests per day × 7 days)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 13,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 626,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 840 requests per day (120 * 7)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 14,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 813,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, which multiplied by 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 15,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 643,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 1,260 requests per day (840 + additional)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 16,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 674,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is **840**."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 17,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 578,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows **840** requests per week."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 18,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 647,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, so multiplied by 7, it's 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 19,
+      "outcome": "fail",
+      "reason": "answer does not contain 840",
+      "steps": 3,
+      "ms": 669,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 1,680 requests over 7 days (120 per day × 7)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 20,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 612,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 840 requests (120 requests per day times 7)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 21,
+      "outcome": "fail",
+      "reason": "did not call calculator",
+      "steps": 2,
+      "ms": 409,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. 120 * 7 = 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 22,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 674,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, so multiplied by 7, that's **840** requests."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 23,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 633,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 840 requests per week (120 requests/day × 7 days)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 24,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 651,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. \n\n120 × 7 = 840"
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 25,
+      "outcome": "fail",
+      "reason": "did not call calculator",
+      "steps": 2,
+      "ms": 377,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows **840** requests per day (120 × 7)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 621,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 840 requests per day (120 requests × 7)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 27,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 614,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 840 requests per day (120 × 7)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 28,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 749,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, which is 840 when multiplied by 7."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools5",
+      "trial": 29,
+      "outcome": "fail",
+      "reason": "did not call calculator",
+      "steps": 2,
+      "ms": 443,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day.\n\n120 × 7 = 840"
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 0,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 574,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line of the big report is 62."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 1,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 504,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report contains a sensor reading of **85**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 2,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 463,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line shows a sensor reading of **5**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 3,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 468,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line of the big report is **17**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 477,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report (Line 400) shows a sensor reading of 17."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 5,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 438,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report reads \"sensor reading 76.\""
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 6,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 484,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report is Line 400, which has a sensor reading of **17**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 7,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 463,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line (Line 400) of the big report has a sensor reading of **17**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 8,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 576,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **5**. (This is from Line 400 in the result shown)."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 9,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 492,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line in the big report shows a sensor reading of **64**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 10,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 472,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows: \"sensor reading 40.\""
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 11,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 483,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last sensor reading is on line 400: **17**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 12,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 466,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report states a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 13,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 508,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report is Line 400, which shows a sensor reading of **17**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 14,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 1155,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report shows a sensor reading of **4**.\n\n**Note:** Line 365 was truncated and did not show a complete reading at that point, but it appears"
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 15,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 447,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line is 17."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 16,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 472,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **68**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 17,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 514,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report is:\n\n**Line 399: sensor reading 81.**"
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 18,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 465,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **85**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 19,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 461,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report shows a sensor reading of **51**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 20,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 446,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last sensor reading on the report is 17."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 21,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 486,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of 58."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 22,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 487,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line (line 400) is 17."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 23,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 621,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report is Line 400, which has a sensor reading of 17."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 24,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 577,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report is Line 400, with a sensor reading of 17."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 25,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 618,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line of the big report is **69**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 531,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of 17."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 27,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 531,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last sensor reading in the report is 17 (on Line 400)."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 28,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 520,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line (line 400) of the report has a sensor reading of **17**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools5",
+      "trial": 29,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 489,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of 24."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 0,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 476,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 1,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 405,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 2,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 398,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 3,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 417,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 411,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 5,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 419,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 6,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 400,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 7,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 418,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 8,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 391,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 9,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 393,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 10,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 407,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 11,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 406,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 12,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 396,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 13,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 413,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 14,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 410,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 15,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 419,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 16,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 402,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 17,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 416,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 18,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 398,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 19,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 424,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 20,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 421,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 21,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 401,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 22,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 394,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 23,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 434,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 24,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 444,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 25,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 395,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 430,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 27,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 395,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 28,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 421,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools5",
+      "trial": 29,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 393,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 0,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 376,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 1,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 345,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 2,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 331,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 3,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 317,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 326,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 5,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 335,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 6,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 326,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 7,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 331,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 8,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 330,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 9,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 332,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 10,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 317,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 11,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 334,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 12,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 357,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 13,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 330,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 14,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 316,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 15,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 351,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 16,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 341,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 17,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 335,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 18,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 347,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 19,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 323,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 20,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 336,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 21,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 323,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 22,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 321,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 23,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 321,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 24,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 321,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 25,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 325,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 336,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 27,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 348,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 28,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 322,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools5",
+      "trial": 29,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 339,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 0,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 718,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 1,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 693,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 2,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 695,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 3,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 634,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 645,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 5,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 641,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 6,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 646,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 7,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 647,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 8,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 646,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 9,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 631,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 10,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 631,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 11,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 647,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 12,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 677,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 13,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 689,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 14,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 667,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 15,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 671,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 16,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 663,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 17,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 661,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 18,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 637,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 19,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 637,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 20,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 672,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 21,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 682,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 22,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 659,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 23,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 654,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 24,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 646,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 25,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 638,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 656,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 27,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 633,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 28,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 677,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools5",
+      "trial": 29,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 626,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 0,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 476,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 1,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 483,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 2,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 414,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 3,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 424,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 4,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 416,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 5,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 433,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 6,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 408,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 7,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 403,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 8,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 418,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 9,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 428,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 10,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 413,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 11,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 432,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 12,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 412,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 13,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 419,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 14,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 419,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 15,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 428,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 16,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 414,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 17,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 414,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 18,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 418,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 19,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 433,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 20,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 428,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 21,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 432,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 22,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 431,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 23,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 438,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 24,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 437,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 25,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 426,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 26,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 426,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 27,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 434,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 28,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 432,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools5",
+      "trial": 29,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 439,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 0,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 593,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 1,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 417,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 2,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 363,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 3,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 417,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 428,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 5,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 422,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 6,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 416,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 7,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 340,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 8,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 416,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 9,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 424,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 × 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 10,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 415,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 11,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 354,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 12,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 406,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 × 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 13,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 424,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 × 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 14,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 427,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 15,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 415,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 16,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 405,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 17,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 344,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 18,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 403,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 × 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 19,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 405,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 20,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 402,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 21,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 459,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 22,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 441,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 23,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 408,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 24,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 431,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 25,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 414,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 × 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 356,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 27,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 423,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 28,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 419,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 × 23 + 4 is **395**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp-unset-tools24",
+      "trial": 29,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 416,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 0,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 448,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 1,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 324,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 2,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 342,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 3,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 332,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 344,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 5,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 347,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 6,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 326,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 7,
+      "outcome": "fail",
+      "reason": "did not call lookup",
+      "steps": 3,
+      "ms": 907,
+      "tools": [
+        "run_shell",
+        "search_web"
+      ],
+      "truncationWarnings": 0,
+      "answer": "I'm unable to run shell commands or search the web in this environment. To find out which port the relay service listens on, I would need access to network info"
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 8,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 333,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 9,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 342,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 10,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 344,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 11,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 344,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 12,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 354,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 13,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 335,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 14,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 340,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 15,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 337,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 16,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 341,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 17,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 346,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 18,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 334,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port 8472."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 19,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 346,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 20,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 338,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 21,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 342,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 22,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 337,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 23,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 345,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 24,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 345,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 25,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 333,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 373,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 27,
+      "outcome": "fail",
+      "reason": "did not call lookup",
+      "steps": 2,
+      "ms": 587,
+      "tools": [
+        "run_shell"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **12306**. This is a common port used for various relay services, particularly in the context of the X.400 network or similar "
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 28,
+      "outcome": "fail",
+      "reason": "did not call lookup",
+      "steps": 2,
+      "ms": 410,
+      "tools": [
+        "run_shell"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **2375**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp-unset-tools24",
+      "trial": 29,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 337,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 0,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 797,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, which is 840 requests when multiplied by 7."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 1,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 810,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, so multiplied by 7, that equals 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 2,
+      "outcome": "fail",
+      "reason": "did not call calculator",
+      "steps": 2,
+      "ms": 425,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows **1,680** requests per day (120 requests × 7 days)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 3,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 657,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, which is **840** for a week."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 653,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, so that number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 5,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 626,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 840 requests per week (120 × 7)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 6,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 826,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows **840** requests over a week (120 requests per day × 7 days)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 7,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 805,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, which is 840 for a week (7 days)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 8,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 656,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is **840**."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 9,
+      "outcome": "fail",
+      "reason": "did not call calculator",
+      "steps": 2,
+      "ms": 406,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows **840** requests per day (120 requests/day × 7 days)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 10,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 713,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, which is 840 requests for a week (7 days)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 11,
+      "outcome": "fail",
+      "reason": "did not call calculator",
+      "steps": 2,
+      "ms": 527,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. You asked for that number times 7, which is:\n\n120 * 7 = **840**"
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 12,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 669,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 840 requests per day (120 requests per day × 7)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 13,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 683,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. 120 times 7 is **840**."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 14,
+      "outcome": "fail",
+      "reason": "did not call calculator",
+      "steps": 2,
+      "ms": 404,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows **840** requests per week (120 × 7)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 15,
+      "outcome": "fail",
+      "reason": "answer does not contain 840",
+      "steps": 3,
+      "ms": 678,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 1,680 requests per week (120 requests/day × 7 days)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 16,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 677,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, which is 840 for a week."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 17,
+      "outcome": "fail",
+      "reason": "did not call calculator",
+      "steps": 2,
+      "ms": 452,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. \n\n120 × 7 = 840"
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 18,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 827,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, which is 840 requests when multiplied by 7."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 19,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 707,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, which is 840 for a week (120 × 7)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 20,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 693,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. 120 × 7 = 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 21,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 655,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, so the number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 22,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 668,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, which is 840 when multiplied by 7."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 23,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 673,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day, which is 840 requests when multiplied by 7."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 24,
+      "outcome": "fail",
+      "reason": "did not call calculator",
+      "steps": 2,
+      "ms": 465,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. You asked for that number times 7, which is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 25,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 662,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 840 requests per week (120 requests × 7 days)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 698,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 840 requests per week (120 requests/day × 7 days)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 27,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 681,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 840 requests per week (120 requests/day × 7 days)."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 28,
+      "outcome": "fail",
+      "reason": "did not call calculator",
+      "steps": 2,
+      "ms": 436,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day.\n120 * 7 = 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp-unset-tools24",
+      "trial": 29,
+      "outcome": "fail",
+      "reason": "answer does not contain 840",
+      "steps": 3,
+      "ms": 655,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 1,050 requests per week (120 × 7)."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 0,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 586,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line is Line 400, which has a sensor reading of **17**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 1,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 447,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line of the big report is **6**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 2,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 415,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line is **86**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 3,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 426,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report has a sensor reading of **85**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 486,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report is Line 400, which shows:\n\n**Sensor reading: 17**"
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 5,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 408,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line is **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 6,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 426,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line of the report is 52."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 7,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 481,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line (line 400) is 17."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 8,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 484,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line of the big report is 81 (line 400)."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 9,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 608,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **2**. (From Line 1,2,...,398,399 - I only see data up to line 399 in this output)"
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 10,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 441,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line in the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 11,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 432,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report shows a sensor reading of 17."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 12,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 493,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report is Line 400, which has a sensor reading of **17**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 13,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 510,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line in the big report shows: **sensor reading 10.** (Line 400)."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 14,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 447,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report shows a sensor reading of **71**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 15,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 478,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line (line 400) of the big report shows a sensor reading of **17**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 16,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 3754,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line in the big report contains a sensor reading of **53**. (This was found from searching for \"big report\" and the result shows line 27 as having a se"
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 17,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 449,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line of the big report is 17."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 18,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 457,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report shows: **sensor reading 55.**"
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 19,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 440,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line (Line 400) is 17."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 20,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 465,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **89**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 21,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 433,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of 7."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 22,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 3,
+      "ms": 1166,
+      "tools": [
+        "lookup",
+        "read_result"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The sensor reading on the last line of the report is **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 23,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 451,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **44**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 24,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 445,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report has a sensor reading of **96**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 25,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 422,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line in the report contains the sensor reading **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 861,
+      "tools": [
+        "lookup",
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows: **sensor reading 17.**"
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 27,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 517,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report has a sensor reading of 17."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 28,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 445,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **7**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp-unset-tools24",
+      "trial": 29,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 431,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the report shows a sensor reading of **9**."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 0,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 540,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 1,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 427,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 2,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 417,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 3,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 431,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 473,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 5,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 501,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 6,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 468,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 7,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 546,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 8,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 488,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 9,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 503,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 10,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 519,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 11,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 502,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 12,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 485,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 13,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 515,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 14,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 493,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 15,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 464,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 16,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 524,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 17,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 504,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 18,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 508,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 19,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 481,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 20,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 474,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 21,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 468,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 22,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 486,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 23,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 473,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 24,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 482,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 25,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 447,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 486,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 27,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 508,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 28,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 496,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "arithmetic",
+      "config": "temp0-tools24",
+      "trial": 29,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 497,
+      "tools": [
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The result of 17 * 23 + 4 is 395."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 0,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 479,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 1,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 403,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 2,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 406,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 3,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 427,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 410,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 5,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 398,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 6,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 384,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 7,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 387,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 8,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 395,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 9,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 368,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 10,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 400,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 11,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 405,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 12,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 396,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 13,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 385,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 14,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 383,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 15,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 409,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 16,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 382,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 17,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 387,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 18,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 386,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 19,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 426,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 20,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 398,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 21,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 395,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 22,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 352,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 23,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 399,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 24,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 384,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 25,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 402,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 401,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 27,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 448,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 28,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 437,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "lookup",
+      "config": "temp0-tools24",
+      "trial": 29,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 2,
+      "ms": 429,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The relay service listens on port **8472**."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 0,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 843,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 1,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 685,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 2,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 670,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 3,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 649,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 4,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 650,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 5,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 646,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 6,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 638,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 7,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 664,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 8,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 688,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 9,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 704,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 10,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 705,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 11,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 707,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 12,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 693,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 13,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 655,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 14,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 665,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 15,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 650,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 16,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 668,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 17,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 666,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 18,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 673,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 19,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 664,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 20,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 704,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 21,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 700,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 22,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 692,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 23,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 659,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 24,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 700,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 25,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 655,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 26,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 672,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 27,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 665,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 28,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 674,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "two-step",
+      "config": "temp0-tools24",
+      "trial": 29,
+      "outcome": "pass",
+      "reason": "ok",
+      "steps": 3,
+      "ms": 666,
+      "tools": [
+        "lookup",
+        "calculator"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The standard plan allows 120 requests per day. That number times 7 is 840."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 0,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 531,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 1,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 427,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 2,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 430,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 3,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 432,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 4,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 434,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 5,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 446,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 6,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 440,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 7,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 446,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 8,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 456,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 9,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 450,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 10,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 463,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 11,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 433,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 12,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 429,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 13,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 453,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 14,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 448,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 15,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 449,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 16,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 431,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 17,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 420,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 18,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 433,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 19,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 425,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 20,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 440,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 21,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 434,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 22,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 434,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 23,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 513,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 24,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 508,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 25,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 523,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 26,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 540,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 27,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 534,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 28,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 420,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    },
+    {
+      "case": "cut-result",
+      "config": "temp0-tools24",
+      "trial": 29,
+      "outcome": "fail",
+      "reason": "answer does not contain 17",
+      "steps": 2,
+      "ms": 445,
+      "tools": [
+        "lookup"
+      ],
+      "truncationWarnings": 0,
+      "answer": "The last line of the big report shows a sensor reading of **81**."
+    }
+  ]
+}

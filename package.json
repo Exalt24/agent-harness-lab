@@ -1,0 +1,25 @@
+{
+  "name": "agent-harness-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A small TypeScript agent harness with an eval harness for non-deterministic systems",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test --test-timeout=30000 \"tests/*.test.ts\"",
+    "eval:scripted": "node eval/run.ts --scripted",
+    "eval:ollama": "node eval/run.ts --ollama",
+    "mutants": "node tests/mutants.mjs"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2"
+  }
+}
