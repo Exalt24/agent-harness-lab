@@ -36,12 +36,14 @@ export interface CallDeps {
   emit: (e: { type: "model_call"; attempt: number; timeoutMs: number } | { type: "model_error"; kind: string; status: number | undefined; retryable: boolean } | { type: "backoff"; ms: number }) => void;
 }
 
-// A client that ignores options.timeoutMs would hang the run, so the loop enforces it too.
+// A client that ignores options.timeoutMs would hang the run, so the loop enforces it too. The timer is
+// the only thing that ends a hung call, so it must keep the event loop alive: unref'd, a process whose
+// last pending thing is a hung model call would exit with no error instead of timing out. The finally
+// below clears it the moment the call settles, so it never holds a finished run open.
 function withTimeout<T>(work: Promise<T>, ms: number): Promise<T> {
   let timer: NodeJS.Timeout | undefined;
   const limit = new Promise<never>((_, reject) => {
     timer = setTimeout(() => reject(new ModelError("timeout", `no answer within ${ms} ms`)), ms);
-    timer.unref();
   });
   return Promise.race([work, limit]).finally(() => clearTimeout(timer));
 }

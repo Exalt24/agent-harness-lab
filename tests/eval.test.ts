@@ -1,6 +1,8 @@
 // LIFESPAN: permanent
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
 import { test } from "node:test";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { FakeClock } from "../src/clock.ts";
 import { runAgent } from "../src/loop.ts";
 import type { RunResult } from "../src/loop.ts";
@@ -79,6 +81,18 @@ test("classify: a server failure, a timeout and an empty answer are ERROR, never
   assert.equal(classify(c, await runCase([script.http(400)])).outcome, "error");
   assert.equal(classify(c, await runCase([script.hang(), script.hang()])).outcome, "error");
   assert.equal(classify(c, await runCase([script.text("", { finishReason: "stop" })])).outcome, "error");
+  // The property behind the hang case, in a process of its own: with nothing else pending, a hung model call must end in a timeout
+  // result, not let the event loop empty and the process exit with no output. This failed only on Linux CI while passing on Windows,
+  // because another handle kept the loop alive there, so the test cannot rely on the host's loop.
+  const here = (p: string) => pathToFileURL(fileURLToPath(new URL(p, import.meta.url))).href;
+  const child = spawnSync(process.execPath, ["--input-type=module", "-e", `
+    import { callWithRetry } from ${JSON.stringify(here("../src/retry.ts"))};
+    import { realClock } from ${JSON.stringify(here("../src/clock.ts"))};
+    const model = { chat: () => new Promise(() => {}) };
+    const out = await callWithRetry(model, [], [], {}, { clock: realClock, deadline: Date.now() + 60000, callTimeoutMs: 30, emit: () => {}, policy: { maxRetries: 0, baseMs: 1, capMs: 1, jitter: () => 0 } });
+    console.log(JSON.stringify(out));
+  `], { encoding: "utf8", timeout: 20_000 });
+  assert.match(child.stdout, /"reason":"model_timeout"/, `a hung call must time out, not vanish: status ${child.status}, stderr ${child.stderr.slice(0, 200)}`);
 });
 
 test("classify: a model that loops on one call is a FAIL, because that is the model's behaviour", async () => {

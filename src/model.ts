@@ -228,10 +228,11 @@ export class ScriptedModel implements ModelClient {
   }
 
   // Never answers. The caller's timeout is the only way out. This timer only moves the fake clock to
-  // where the caller's timer fires, and is unref'd so it never keeps a process alive.
+  // where the caller's timer fires; it is short (the call timeout) and must stay referenced, or a run
+  // whose last pending thing is this hang lets the event loop empty before the caller's timer fires.
   private never(options: ChatOptions): Promise<ChatResult> {
     const clock = this.opts.clock;
-    if (clock) setTimeout(() => clock.advance(options.timeoutMs), options.timeoutMs).unref();
+    if (clock) setTimeout(() => clock.advance(options.timeoutMs), options.timeoutMs);
     return new Promise<ChatResult>(() => {});
   }
 }
