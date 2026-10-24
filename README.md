@@ -94,7 +94,7 @@ What the numbers say, and what they do not:
 * The Ollama numbers come from one machine, one model, one quantization, one day, four small cases and N of 10 and 30. They show a pattern on this setup. They do not rank models, and they do not transfer to other sizes without a rerun (`--ollama <model>` repeats it).
 * Truncation is detected, not prevented, and the default is to warn (event plus `warnings`), not to fail. `onTruncation: "fail"` fails the run closed. No truncation happened in the real runs, so the detector is pinned by scripted tests, not by a live truncation.
 * Passing a case is a string check on the final answer plus the tool trace. A right answer with a sloppy explanation passes.
-* Tested on Node 24.18. The CI file runs Node 22 (type stripping needs 22.18 or newer); I did not run it on 22 locally.
+* Tested on Node 24.18 locally and on Node 22 in CI (type stripping needs 22.18 or newer). The first CI run on Linux found a real bug that Windows had hidden: the call timeout timer was unref'd, so a hung model call could end the process with no error. The timer is now kept alive and a test runs the hang in its own process.
 * P2P networking, remote inference and any cloud model API are not covered.
 
 ## Layout
