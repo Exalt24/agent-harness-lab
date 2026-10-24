@@ -1,5 +1,7 @@
 # agent-harness-lab
 
+[![CI](https://github.com/Exalt24/agent-harness-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/Exalt24/agent-harness-lab/actions/workflows/ci.yml)
+
 A small TypeScript agent harness (tool calling, loop guards, context budget, structured output) with an eval harness that scores a non-deterministic model with confidence intervals.
 
 ![Terminal replay: npm run mutants reports 18 guards removed and 18 caught, then npm test scrolls to 187 passing, then the mutants run again](docs/demo.gif)
