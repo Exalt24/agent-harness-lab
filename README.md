@@ -23,7 +23,7 @@ The only runtime dependency is `zod`, next to the Node standard library. There i
 | 3 | A tool result over a byte cap becomes head, a visible marker, tail. The full text stays retrievable through `read_result`. A stub is never the only copy. | `src/context.ts` | `tests/context.test.ts` "byte cap: ..." and "read_result: ..."; `tests/loop.test.ts` "byte cap end to end"; the stub invariant in `tests/simulation.test.ts` |
 | 4 | Offer fewer tools. The list per turn is narrowable, and a tool that was not offered is refused like an unknown one. | `src/tools.ts` (`rank`), `src/loop.ts` (`toolsPerTurn`) | `tests/loop.test.ts` "narrowing: ..." and "a registered tool that is not offered this turn is rejected"; `tests/tools.test.ts` "registry rank" |
 | 5 | An empty reply with `finish_reason: length` is not nudged with a longer prompt. Retry once with narrower tools, same messages. | `src/loop.ts` | `tests/loop.test.ts` "empty reply with finish_reason length: ..." (three tests) |
-| 6 | Loop guards: a hard step limit, a repeated identical tool call guard, a total time budget (plus a per call timeout and retries only on transport errors and 5xx, with exponential backoff and jitter). | `src/loop.ts`, `src/retry.ts` | `tests/loop.test.ts` "step limit", "repeat guard", "timeout", "time budget", "retry", "backoff" (each guard has a negative test and a positive control); `tests/table.test.ts` |
+| 6 | Loop guards: a hard step limit, a repeated identical tool call guard, a total time budget (plus a per call timeout and retries only on transport errors, timeouts and 5xx, with exponential backoff and jitter). | `src/loop.ts`, `src/retry.ts` | `tests/loop.test.ts` "step limit", "repeat guard", "timeout", "time budget", "retry", "backoff" (the step limit, repeat guard, timeout, time budget and retry each have a negative test and a positive control; backoff has growth and ordering tests); `tests/table.test.ts` |
 | 7 | Structured output is validated against a schema. On failure it is re-asked once with the exact validation error. After that the run fails closed with a reason and returns no data. | `src/structured.ts` | `tests/structured.test.ts` (eight tests); the structured simulation in `tests/simulation.test.ts` |
 
 Every transition of the run (`running`, `tool_pending`, `done`, `failed(reason)`) is written to an event log, and the tests assert on that log.
@@ -36,7 +36,7 @@ npm run typecheck
 npm test                                  # unit, table, simulation tests
 npm run mutants                           # remove one guard at a time, the suite must go red
 npm run eval:scripted                     # deterministic faults, no model needed
-npm run eval:ollama -- qwen3.5:4b         # a real local model through Ollama
+npm run eval:ollama -- qwen3.5:4b         # a real local model: needs Ollama running and `ollama pull qwen3.5:4b` done first
 ```
 
 Useful eval flags: `--trials 10`, `--configs temp0-tools5,temp0-tools24`, `--budget-min 8` (stop cleanly after that many minutes) and `--resume` (continue the same report file). Each run writes a dated JSON report under `eval/reports/`.
@@ -94,7 +94,7 @@ What the numbers say, and what they do not:
 * The Ollama numbers come from one machine, one model, one quantization, one day, four small cases and N of 10 and 30. They show a pattern on this setup. They do not rank models, and they do not transfer to other sizes without a rerun (`--ollama <model>` repeats it).
 * Truncation is detected, not prevented, and the default is to warn (event plus `warnings`), not to fail. `onTruncation: "fail"` fails the run closed. No truncation happened in the real runs, so the detector is pinned by scripted tests, not by a live truncation.
 * Passing a case is a string check on the final answer plus the tool trace. A right answer with a sloppy explanation passes.
-* Tested on Node 24.18 locally and on Node 22 in CI (type stripping needs 22.18 or newer). The first CI run on Linux found a real bug that Windows had hidden: the call timeout timer was unref'd, so a hung model call could end the process with no error. The timer is now kept alive and a test runs the hang in its own process.
+* Tested on Node 24.18 locally and on the latest Node 22 in CI (v22.23.3 on the last run; type stripping needs 22.18 or newer, and 22.18 itself is not tested). The first CI run on Linux found a real bug that Windows had hidden: the call timeout timer was unref'd, so a hung model call could end the process with no error. The timer is now kept alive and a test runs the hang in its own process.
 * P2P networking, remote inference and any cloud model API are not covered.
 
 ## Layout
@@ -102,7 +102,7 @@ What the numbers say, and what they do not:
 ```
 src/model.ts       ModelClient, OllamaClient (HTTP, explicit options, AbortSignal timeout), ScriptedModel with faults
 src/loop.ts        the agent loop, run state machine, event log, guards
-src/retry.ts       retry with exponential backoff and jitter, transport errors and 5xx only
+src/retry.ts       retry with exponential backoff and jitter, transport errors, timeouts and 5xx only
 src/context.ts     token estimate, byte cap stub, read_result, trimming that keeps tool call pairs
 src/structured.ts  schema checked output, one re-ask, fail closed
 src/tools.ts       calculator (no eval), lookup, decoys, registry with ranking and narrowing
