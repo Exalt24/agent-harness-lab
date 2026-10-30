@@ -92,9 +92,9 @@ What the numbers say, and what they do not:
 * This is a small harness, not a framework. No streaming, no parallel tool calls, no persistence, no multi agent anything.
 * The token count is an estimate (`ceil(chars / 4)`). It is only used to notice a gross mismatch with what the server reports (less than 60 percent of the estimate, with at least 100 estimated tokens) and to decide when to trim. A real tokenizer will disagree, and a server that reports no count is not accused.
 * The Ollama numbers come from one machine, one model, one quantization, one day, four small cases and N of 10 and 30. They show a pattern on this setup. They do not rank models, and they do not transfer to other sizes without a rerun (`--ollama <model>` repeats it).
-* Truncation is detected, not prevented, and the default is to warn (event plus `warnings`), not to fail. `onTruncation: "fail"` fails the run closed. No truncation happened in the real runs, so the detector is pinned by scripted tests, not by a live truncation.
+* Truncation is detected, not prevented, and the default is to warn (event plus `warnings`), not to fail. `onTruncation: "fail"` fails the run closed. The detector is pinned by scripted tests that force a truncation; none of the runs reached it.
 * Passing a case is a string check on the final answer plus the tool trace. A right answer with a sloppy explanation passes.
-* Tested on Node 24.18 locally and on the latest Node 22 in CI (v22.23.3 on the last run; type stripping needs 22.18 or newer, and 22.18 itself is not tested). The first CI run on Linux found a real bug that Windows had hidden: the call timeout timer was unref'd, so a hung model call could end the process with no error. The timer is now kept alive and a test runs the hang in its own process.
+* Tested on Node 24.18 locally and on the latest Node 22 in CI (v22.23.3 on the last run; type stripping needs 22.18 or newer). The first CI run on Linux found a real bug that Windows had hidden: the call timeout timer was unref'd, so a hung model call could end the process with no error. The timer is now kept alive and a test runs the hang in its own process.
 * P2P networking, remote inference and any cloud model API are not covered.
 
 ## Layout
