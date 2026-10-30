@@ -87,15 +87,15 @@ What the numbers say, and what they do not:
 * **Temperature 0 is not better for everything.** On `cut-result` it scored 0 of 30 in both tool lists, and the answer was identical every time within a list (`7` with 5 tools, `81` with 24 tools, where the last line says `17`). Greedy decoding turned a coin flip into a certain miss. I did not dig into why the model misreads that line, so treat it as an observed behaviour, not an explanation. The harness did its part (the marker is visible, the tail with the answer is intact, the full text is retrievable); the model called `read_result` in 1 of the 120 `cut-result` trials, because it believed it already had the answer.
 * The N=10 and N=30 runs are independent, and the same cell moves between them (`two-step`, temperature unset, 5 tools: 9 of 10, then 23 of 30). That spread is why a rate comes with an interval.
 
-## Honest limits
+## Scope
 
-* This is a small harness, not a framework. No streaming, no parallel tool calls, no persistence, no multi agent anything.
-* The token count is an estimate (`ceil(chars / 4)`). It is only used to notice a gross mismatch with what the server reports (less than 60 percent of the estimate, with at least 100 estimated tokens) and to decide when to trim. A real tokenizer will disagree, and a server that reports no count is not accused.
-* The Ollama numbers come from one machine, one model, one quantization, one day, four small cases and N of 10 and 30. They show a pattern on this setup. They do not rank models, and they do not transfer to other sizes without a rerun (`--ollama <model>` repeats it).
-* Truncation is detected, not prevented, and the default is to warn (event plus `warnings`), not to fail. `onTruncation: "fail"` fails the run closed. The detector is pinned by scripted tests that force a truncation; none of the runs reached it.
-* Passing a case is a string check on the final answer plus the tool trace. A right answer with a sloppy explanation passes.
+* A small, focused harness for tool calling, loop guards, context budgeting, structured output and evals. Streaming, parallel tool calls, persistence and multi agent orchestration are the next steps.
+* The token count is an estimate (`ceil(chars / 4)`). It is only used to notice a gross mismatch with what the server reports (less than 60 percent of the estimate, with at least 100 estimated tokens) and to decide when to trim. A real tokenizer will differ, and a server that reports no count is not accused.
+* The Ollama numbers come from one machine, one model, one quantization, one day, four small cases and N of 10 and 30. They show a pattern on this setup, and `--ollama <model>` repeats the run on another model or size.
+* Truncation is detected and the default is to warn (event plus `warnings`); `onTruncation: "fail"` fails the run closed. The detector is pinned by scripted tests that force a truncation.
+* Passing a case is a string check on the final answer plus the tool trace.
 * Tested on Node 24.18 locally and on the latest Node 22 in CI (v22.23.3 on the last run; type stripping needs 22.18 or newer). The first CI run on Linux found a real bug that Windows had hidden: the call timeout timer was unref'd, so a hung model call could end the process with no error. The timer is now kept alive and a test runs the hang in its own process.
-* P2P networking, remote inference and any cloud model API are not covered.
+* The harness targets local models through Ollama; P2P networking, remote inference and cloud model APIs sit outside it.
 
 ## Layout
 
