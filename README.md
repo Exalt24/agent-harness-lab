@@ -10,9 +10,9 @@ A small TypeScript agent harness (tool calling, loop guards, context budget, str
 
 ## What it is and why
 
-Running agents on small local models fails in quiet ways. A server answers 200 with half the prompt cut. A model drops a tool call. A big tool result is trimmed and the model invents the missing part. This repo is a clean room harness that turns each of those failures into code you can test, plus an eval runner that says how often a model really gets a task right, with an interval, and keeps broken trials out of the score.
+Running agents on small local models fails in quiet ways. A server answers 200 with half the prompt cut. A model drops a tool call. A big tool result is trimmed and the model invents the missing part. This repo is a clean room harness that turns each of those failures into code you can test. It adds an eval runner that says how often a model really gets a task right, with an interval. The runner keeps broken trials out of the score.
 
-The only runtime dependency is `zod`, next to the Node standard library. There is no framework. Node 22.18 or newer runs the TypeScript files directly (type stripping), so there is no build step. TypeScript is used for `npm run typecheck` only.
+The only runtime dependency is `zod`, next to the Node standard library. There is no framework. Node 22.18 or newer runs the TypeScript files directly (type stripping). There is no build step. TypeScript is used for `npm run typecheck` only.
 
 ## The seven lessons and the test that pins each
 
@@ -26,7 +26,7 @@ The only runtime dependency is `zod`, next to the Node standard library. There i
 | 6 | Loop guards: a hard step limit, a repeated identical tool call guard, a total time budget (plus a per call timeout and retries only on transport errors, timeouts and 5xx, with exponential backoff and jitter). | `src/loop.ts`, `src/retry.ts` | `tests/loop.test.ts` "step limit", "repeat guard", "timeout", "time budget", "retry", "backoff" (the step limit, repeat guard, timeout, time budget and retry each have a negative test and a positive control; backoff has growth and ordering tests); `tests/table.test.ts` |
 | 7 | Structured output is validated against a schema. On failure it is re-asked once with the exact validation error. After that the run fails closed with a reason and returns no data. | `src/structured.ts` | `tests/structured.test.ts` (eight tests); the structured simulation in `tests/simulation.test.ts` |
 
-Every transition of the run (`running`, `tool_pending`, `done`, `failed(reason)`) is written to an event log, and the tests assert on that log.
+Every transition of the run (`running`, `tool_pending`, `done`, `failed(reason)`) is written to an event log. The tests assert on that log.
 
 ## How to run
 
@@ -45,8 +45,8 @@ Useful eval flags: `--trials 10`, `--configs temp0-tools5,temp0-tools24`, `--bud
 
 The last full local run (Node 24.18, 2026-10-24) gave these counts.
 
-* `npm test`: 187 tests, all passing. That includes 66 generated table tests (11 fault types by 3 positions by 2 step limits), 20 seeded loop simulations of 50 scripted steps each with random faults, and 20 seeded structured output simulations of 50 requests each.
-* `npm run mutants`: 18 mutants, 18 caught, 0 survived, 0 stale anchors. A mutant is one broken guard in a temp copy (step limit, repeat guard, per call timeout, time budget, retry only on 5xx, backoff growth, stub marker, stub store, byte cap, truncation detection, empty reply narrowing, unknown tool execution, schema validation, fail closed, re-ask once, explicit temperature, trim keeps the first question, `read_result` offered). An anchor that no longer matches the source exactly once fails the run, and so does a red baseline.
+* `npm test`: 187 tests, all passing. That includes 66 generated table tests (11 fault types by 3 positions by 2 step limits). It also has 20 seeded loop simulations of 50 scripted steps each with random faults. Another 20 seeded structured output simulations run 50 requests each.
+* `npm run mutants`: 18 mutants, 18 caught, 0 survived, 0 stale anchors. A mutant is one broken guard in a temp copy. The guards are step limit, repeat guard, per call timeout, time budget, retry only on 5xx and backoff growth. They also include stub marker, stub store, byte cap, truncation detection and empty reply narrowing. The rest are unknown tool execution, schema validation, fail closed, re-ask once, explicit temperature, trim keeps the first question and `read_result` offered. An anchor that no longer matches the source exactly once fails the run. So does a red baseline.
 * `npm run eval:scripted`: 160 trials with seeded faults. It checks the scoring pipeline (PASS, FAIL and ERROR all occur, errors stay out of the denominator). Its rates say nothing about any model.
 
 ## How the eval scores
@@ -54,9 +54,9 @@ The last full local run (Node 24.18, 2026-10-24) gave these counts.
 A case is a prompt, the tools a correct run must call, and a check on the final answer. The runner runs N trials per case per configuration (default 10) and reports pass counts with 95 percent Wilson score intervals. A rate is never printed without its interval and counts.
 
 * PASS and FAIL are scored. A wrong answer, a skipped required tool call, a loop on one call and a step limit are FAIL.
-* ERROR is a trial that measured nothing about the model: the server failed, a call timed out, a 4xx came back, or the reply was empty. ERROR is counted apart and is never a zero. The denominator is PASS plus FAIL.
-* Four configurations cross temperature (unset, which sends no value, against 0) with the tool list (5 tools against 24; the extra tools are named decoys that do nothing).
-* Four cases: `arithmetic`, `lookup`, `two-step` (look something up, then calculate) and `cut-result` (the answer sits in the tail of a 12 KB tool result that the harness cut to head and tail). The first three are the tool-choice cases. A correct number without the tool call is a FAIL, because dropped tool calls are what the eval is for.
+* ERROR is a trial that measured nothing about the model. The server failed, a call timed out, a 4xx came back, or the reply was empty. ERROR is counted apart and is never a zero. The denominator is PASS plus FAIL.
+* Four configurations cross temperature with the tool list. Temperature is unset (which sends no value) or 0. The tool list is 5 tools or 24, and the extra tools are named decoys that do nothing.
+* Four cases: `arithmetic`, `lookup`, `two-step` and `cut-result`. `two-step` means look something up, then calculate. In `cut-result` the answer sits in the tail of a 12 KB tool result that the harness cut to head and tail. The first three are the tool-choice cases. A correct number without the tool call is a FAIL, because dropped tool calls are what the eval is for.
 
 ## Results: qwen3.5:4b on one machine, 2026-10-24
 
@@ -82,20 +82,20 @@ Per case at N=30 per cell:
 
 What the numbers say, and what they do not:
 
-* **Temperature (lesson 2) reproduced for tool choice, in part.** With temperature unset, 14 of 180 tool-choice trials failed because a required tool call was never made (4 with 5 tools, 10 with 24). With temperature 0 that happened in 0 of 180. At N=30 the pooled intervals for unset against 0 do not overlap with 24 tools (87% against 100%) and do overlap with 5 tools (92% against 100%). At N=10 every one of those comparisons overlaps, so the first run alone could not have shown it.
-* **Fewer tools (lesson 4) did not reproduce on this model.** At temperature 0 the model got every tool-choice trial right with 5 tools and with 24. With temperature unset, 5 tools against 24 gave 92% against 87% with overlapping intervals. The dropped tool call counts (4 against 10) point the expected way but this run cannot separate them.
-* **Temperature 0 is not better for everything.** On `cut-result` it scored 0 of 30 in both tool lists, and the answer was identical every time within a list (`7` with 5 tools, `81` with 24 tools, where the last line says `17`). Greedy decoding turned a coin flip into a certain miss. I did not dig into why the model misreads that line, so treat it as an observed behaviour, not an explanation. The harness did its part (the marker is visible, the tail with the answer is intact, the full text is retrievable); the model called `read_result` in 1 of the 120 `cut-result` trials, because it believed it already had the answer.
-* The N=10 and N=30 runs are independent, and the same cell moves between them (`two-step`, temperature unset, 5 tools: 9 of 10, then 23 of 30). That spread is why a rate comes with an interval.
+* **Temperature (lesson 2) reproduced for tool choice, in part.** With temperature unset, 14 of 180 tool-choice trials failed because a required tool call was never made. That was 4 with 5 tools and 10 with 24. With temperature 0 that happened in 0 of 180. At N=30 the pooled intervals for unset against 0 do not overlap with 24 tools (87% against 100%). They do overlap with 5 tools (92% against 100%). At N=10 every one of those comparisons overlaps, so the first run alone could not have shown it.
+* **Fewer tools (lesson 4) did not reproduce on this model.** At temperature 0 the model got every tool-choice trial right with 5 tools and with 24. With temperature unset, 5 tools against 24 gave 92% against 87% with overlapping intervals. The dropped tool call counts (4 against 10) point the expected way. This run cannot separate them.
+* **Temperature 0 is not better for everything.** On `cut-result` it scored 0 of 30 in both tool lists. The answer was identical every time within a list (`7` with 5 tools, `81` with 24 tools, where the last line says `17`). Greedy decoding turned a coin flip into a certain miss. I did not dig into why the model misreads that line. Treat it as an observed behaviour, not an explanation. The harness did its part. The marker is visible, the tail with the answer is intact and the full text is retrievable. The model called `read_result` in 1 of the 120 `cut-result` trials, because it believed it already had the answer.
+* The N=10 and N=30 runs are independent. The same cell moves between them (`two-step`, temperature unset, 5 tools: 9 of 10, then 23 of 30). That spread is why a rate comes with an interval.
 
 ## Scope
 
 * A small, focused harness for tool calling, loop guards, context budgeting, structured output and evals. Streaming, parallel tool calls, persistence and multi agent orchestration are the next steps.
-* The token count is an estimate (`ceil(chars / 4)`). It is only used to notice a gross mismatch with what the server reports (less than 60 percent of the estimate, with at least 100 estimated tokens) and to decide when to trim. A real tokenizer will differ, and a server that reports no count is not accused.
+* The token count is an estimate (`ceil(chars / 4)`). It is only used to notice a gross mismatch with what the server reports, and to decide when to trim. A mismatch means less than 60 percent of the estimate, with at least 100 estimated tokens. A real tokenizer will differ, and a server that reports no count is not accused.
 * The Ollama numbers come from one machine, one model, one quantization, one day, four small cases and N of 10 and 30. They show a pattern on this setup, and `--ollama <model>` repeats the run on another model or size.
-* Truncation is detected and the default is to warn (event plus `warnings`); `onTruncation: "fail"` fails the run closed. The detector is pinned by scripted tests that force a truncation.
+* Truncation is detected and the default is to warn (event plus `warnings`). `onTruncation: "fail"` fails the run closed. The detector is pinned by scripted tests that force a truncation.
 * Passing a case is a string check on the final answer plus the tool trace.
-* Tested on Node 24.18 locally and on the latest Node 22 in CI (v22.23.3 on the last run; type stripping needs 22.18 or newer). The first CI run on Linux found a real bug that Windows had hidden: the call timeout timer was unref'd, so a hung model call could end the process with no error. The timer is now kept alive and a test runs the hang in its own process.
-* The harness targets local models through Ollama; P2P networking, remote inference and cloud model APIs sit outside it.
+* Tested on Node 24.18 locally and on the latest Node 22 in CI (v22.23.3 on the last run; type stripping needs 22.18 or newer). The first CI run on Linux found a real bug that Windows had hidden. The call timeout timer was unref'd, so a hung model call could end the process with no error. The timer is now kept alive and a test runs the hang in its own process.
+* The harness targets local models through Ollama. P2P networking, remote inference and cloud model APIs sit outside it.
 
 ## Layout
 
